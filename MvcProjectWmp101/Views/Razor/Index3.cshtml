@@ -1,0 +1,43 @@
+﻿@using MvcProjectWmp101.Library
+@{
+    ViewBag.Title = "Index3";
+}
+
+<h2>Index3</h2>
+
+<input type="text" value="" id="text1" name="text1 "/>
+<br />
+<input type="button" value="Buna tikla" id="btn01" name="btn01" />
+<br />
+<a href="/Razor/Index" type="button">Razor index</a>
+<br />
+<a href="/Home/Index" type="button" class="btn btn-success">Home index</a>
+<br />
+<hr />
+
+@Html.ActionLink("Index sayfasina git","Index","Razor",null,new {@class="btn btn-primary"})
+@Html.Label("Adiniz:")
+@Html.TextBox("txtAd","",new {placeholder="Adiniz"})
+@Html.TextArea("txtArea",null,5,80, new {placeholder="Ozgecmis bilgileriniz"})
+
+@Html.Button("btn02","button","Helper Buton yaptim")
+
+@Html.Button("btnRenkli", "button", "btn-danger", "Deneme")
+
+@Html.Button("btn04",myExtensions.ButtonType.button,"btn-warning","Iptal")
+
+@Html.Button("btn05",myExtensions.ButtonType.button,"btn-primary","width:100px;","TagHelper button")
+
+@Html.Paragraph("p01",2," dashed","<b>Bu bir htmlhelper ile hazirlanmis bir p tagi paragrafidir</b>")
+
+<p>
+    <b>
+        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+    </b>
+</p>
+
+@Html.Paragraph("p03",3," solid",@<text><b><strong>
+    Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+    Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+</strong></b></text>)

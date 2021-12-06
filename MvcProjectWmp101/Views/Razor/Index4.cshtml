@@ -5,3 +5,23 @@
 
 <h2>Index4</h2>
 
+<h3>Url Helper</h3>
+
+@*<a href="/Home/Index">Home indexine git</a>*@
+
+<a href="@Url.Action("Index","Razor")">Razor indexine git</a>
+
+@* @Url.Action==>gidilecek action metodunun url linkini verir *@
+
+@* @Url.Content()==> verilen sanal bir yolu urlle cevirir *@
+
+@* @Url.Encode()==>encode ile ozel karakterler veya bosluk var ise url hataya dusmemesi icin ozel kodlara cevrilerek url olusturulmasina yarar *@
+
+<hr />
+@Url.Action("Index3")
+<br />
+@Url.Content("~/Razor/Index3")
+<br />
+@Url.Encode("~/Home/Index?arama=onur ağıcı")
+<br />
+<a href="~/Home/Index?arama=onur ağıcı">content</a>

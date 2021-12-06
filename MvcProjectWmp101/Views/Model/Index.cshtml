@@ -1,0 +1,29 @@
+﻿@using MvcProjectWmp101.ViewModel
+@model indexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <b>Ad : </b> @Model.KisiNesnesi.Ad <br />
+    <b>Soyad : </b> @Model.KisiNesnesi.Soyad <br />
+    <b>Yas : </b> @Model.KisiNesnesi.Yas <br />
+    <b>Adres : </b> @Model.AdresNesnesi.AdresTanimi <br />
+    <b>Sehir : </b> @Model.AdresNesnesi.Sehir <br />
+</div>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <b>Ad : </b>@Html.TextBoxFor(x => x.KisiNesnesi.Ad) <br />
+        <b>Soyad : </b> @Html.TextBoxFor(x => x.KisiNesnesi.Soyad) <br />
+        <b>Yas : </b> @Html.TextBoxFor(x => x.KisiNesnesi.Yas) <br />
+        <b>Adres : </b> @Html.TextBoxFor(x => x.AdresNesnesi.AdresTanimi) <br />
+        <b>Sehir : </b> @Html.TextBoxFor(x => x.AdresNesnesi.Sehir) <br />
+        <hr />
+        <input type="submit" value="Gonder"/>
+    }
+</div>

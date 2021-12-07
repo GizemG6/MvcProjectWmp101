@@ -1,0 +1,45 @@
+﻿@model MvcProjectWmp101.Models.Persons
+@{
+    ViewBag.Title = "NewPerson";
+}
+
+<h2>NewPerson</h2>
+
+@using (Html.BeginForm())
+{
+
+
+    <div class="input-group">
+        @if (ViewBag.Result != null)
+        {
+            <div class="alert alert-@ViewBag.Status" role="alert">
+                @ViewBag.Result
+            </div>
+
+        }
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtName" style="width:120px">Name</span>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Person Name" })
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtSurName" style="width:120px">SurName</span>
+        @Html.TextBoxFor(x => x.SurName, new { @class = "form-control", placeholder = "Person SurName" })
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtAge" style="width:120px">Age</span>
+        @Html.TextBoxFor(x => x.Age, new { @class = "form-control", placeholder = "Person Age", type = "number", @min = "0" })
+    </div>
+    if (ViewBag.Result != null)
+    {
+       <div class="input-group mb-3">
+    @Html.ActionLink("Geri don", "Index", "Ef", null, new { @class = "btn btn-primary" })
+       </div>
+    }
+    else
+    {
+        <div class="input-group mb-3">
+        <input type="submit" value="Save" class="btn btn-success" />
+        </div>
+    }
+}

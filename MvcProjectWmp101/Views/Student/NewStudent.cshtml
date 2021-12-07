@@ -1,0 +1,49 @@
+﻿@model MvcProjectWmp101.Models.Students
+@{
+    ViewBag.Title = "NewStudent";
+}
+
+<h2>NewStudent</h2>
+
+@using (Html.BeginForm())
+{
+
+
+    <div class="input-group">
+        @if (ViewBag.Result != null)
+        {
+            <div class="alert alert-@ViewBag.Status" role="alert">
+                @ViewBag.Result
+            </div>
+
+        }
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtName" style="width:120px">Name</span>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Student Name" })
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtSurName" style="width:120px">SurName</span>
+        @Html.TextBoxFor(x => x.SurName, new { @class = "form-control", placeholder = "Student SurName" })
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtNumber" style="width:120px">SchoolNumber</span>
+        @Html.TextBoxFor(x => x.Number, new { @class = "form-control", placeholder = "School Number", type = "number", @min = "0" })
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtClass" style="width:120px">Class</span>
+        @Html.DropDownListFor(x => x.Classes.Id, (List<SelectListItem>)ViewBag.classes, new { @class = "form-control", placeholder = "Class" })
+    </div>
+    if (ViewBag.Result != null)
+    {
+        <div class="input-group mb-3">
+            @Html.ActionLink("Geri don", "Index", "Ef", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+    else
+    {
+        <div class="input-group mb-3">
+            <input type="submit" value="Save" class="btn btn-success" />
+        </div>
+    }
+}

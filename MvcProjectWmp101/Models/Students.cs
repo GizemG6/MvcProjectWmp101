@@ -20,9 +20,5 @@ namespace MvcProjectWmp101.Models
         public int Number { get; set; }
         public virtual Classes Classes { get; set; }
 
-        public static implicit operator List<object>(Students v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

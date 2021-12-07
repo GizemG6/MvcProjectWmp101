@@ -125,9 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddressesController.cs" />
+    <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="Controllers\EfController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
+    <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\RazorController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
@@ -144,6 +147,7 @@
     <Compile Include="Models\Addresses.cs" />
     <Compile Include="Models\Adres.cs" />
     <Compile Include="Models\Persons.cs" />
+    <Compile Include="ViewModel\PerAddViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -183,6 +187,10 @@
     <Content Include="Views\Model\Index.cshtml" />
     <Content Include="Views\Ef\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Persons\NewPerson.cshtml" />
+    <Content Include="Views\Addresses\NewAddress.cshtml" />
+    <Content Include="Views\Student\NewStudent.cshtml" />
+    <Content Include="Views\Classes\NewClasses.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

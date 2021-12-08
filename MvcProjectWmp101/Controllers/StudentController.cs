@@ -13,6 +13,26 @@ namespace MvcProjectWmp101.Controllers
         // GET: Student
         public ActionResult NewStudent()
         {
+            studentDatabaseContext db = new studentDatabaseContext();
+
+            List<SelectListItem> classesList = (from s in db.Classes.ToList()
+                                                select new SelectListItem()
+                                                {
+                                                    Text = s.Name,
+                                                    Value = s.Id.ToString()
+                                                }).ToList();
+
+            //List<Persons> persons = db.Persons.ToList();
+            //List<SelectListItem> personslist = new List<SelectListItem>();
+            //foreach (Persons person in persons)
+            //{
+            //    SelectListItem item = new SelectListItem();
+            //    item.Text = person.Name + " " + person.SurName;
+            //    item.Value = person.Id.ToString();
+            //    personslist.Add(item);
+            //}
+            TempData["classes"] = classesList;
+            ViewBag.classes = classesList;
             return View();
         }
         [HttpPost]
@@ -37,7 +57,7 @@ namespace MvcProjectWmp101.Controllers
                 }
             }
             ModelState.Clear();
-            ViewBag.students = TempData["students"];
+            ViewBag.classes = TempData["classes"];
             return View();
         }
     }

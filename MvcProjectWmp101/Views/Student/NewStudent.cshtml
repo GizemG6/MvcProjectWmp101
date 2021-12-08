@@ -32,12 +32,12 @@
     </div>
     <div class="input-group mb-3">
         <span class="input-group-text" id="txtClass" style="width:120px">Class</span>
-        @Html.DropDownListFor(x => x.Classes.Id, (List<SelectListItem>)ViewBag.classes, new { @class = "form-control", placeholder = "Class" })
+        @Html.DropDownListFor(x => x.Classes.Id, (List<SelectListItem>)ViewBag.classes, new { @class = "form-control", placeholder = "Classes" })
     </div>
     if (ViewBag.Result != null)
     {
         <div class="input-group mb-3">
-            @Html.ActionLink("Geri don", "Index", "Ef", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Geri don", "Index", "Student", null, new { @class = "btn btn-primary" })
         </div>
     }
     else

@@ -148,6 +148,7 @@
     <Compile Include="Models\Adres.cs" />
     <Compile Include="Models\Persons.cs" />
     <Compile Include="ViewModel\PerAddViewModel.cs" />
+    <Compile Include="ViewModel\StdAddViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -191,6 +192,9 @@
     <Content Include="Views\Addresses\NewAddress.cshtml" />
     <Content Include="Views\Student\NewStudent.cshtml" />
     <Content Include="Views\Classes\NewClasses.cshtml" />
+    <Content Include="Views\Persons\Update.cshtml" />
+    <Content Include="Views\Addresses\Update.cshtml" />
+    <Content Include="Views\Persons\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

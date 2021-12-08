@@ -12,17 +12,6 @@ namespace MvcProjectWmp101.Controllers
     {
         public ActionResult NewClasses()
         {
-            studentDatabaseContext db = new studentDatabaseContext();
-
-            List<SelectListItem> classesList = (from s in db.Classes.ToList()
-                                                 select new SelectListItem()
-                                                 {
-                                                     Text = s.Name,
-                                                     Value = s.Id.ToString()
-                                                 }).ToList();
-
-            TempData["classes"] = classesList;
-            ViewBag.students = classesList;
             return View();
         }
         [HttpPost]

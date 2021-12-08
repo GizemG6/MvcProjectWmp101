@@ -12,10 +12,18 @@ namespace MvcProjectWmp101.Models.Manager
         public DbSet<Persons> Persons { get; set; }
         public DbSet<Addresses> Addresses{ get; set; }
 
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Addresses>()
+        //        .HasOptional(a => a.Persons)
+        //        .WithOptionalDependent()
+        //        .WillCascadeOnDelete(true);
+        //}
         public DatabaseContext()
         {
             Database.SetInitializer(new DataBaseCreator());
         }
+
     }
     public class DataBaseCreator : CreateDatabaseIfNotExists<DatabaseContext>
     {
@@ -25,6 +33,7 @@ namespace MvcProjectWmp101.Models.Manager
             base.InitializeDatabase(context);
         }
         //Seed Database ==> database olustuktan sonra eklenmesi gereken islemler icin kullanilir.
+       
         protected override void Seed(DatabaseContext context)
         {
             for (int i = 0; i < 10; i++)

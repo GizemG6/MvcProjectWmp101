@@ -1,13 +1,55 @@
 ﻿@using MvcProjectWmp101.Models
-@model IEnumerable<MvcProjectWmp101.Models.Students>
+@*@model IEnumerable<MvcProjectWmp101.Models.Students>*@
+@model MvcProjectWmp101.ViewModel.StdAddViewModel
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>Index</h2>
 
-@foreach (var std in Model)
-{
-    @(std.Name + " "+std.SurName+" "+std.Number)
-    <br />
-}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Index</h2>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                @Html.ActionLink("Add Student", "NewStudent", "Students", null, new { @class = "btn btn-primary" })
+            </div>
+            <br />
+            <br />
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    <i class="bi bi-people" style="color:yellow"></i> Students
+                </li>
+                @foreach (var std in Model.Students)
+                {
+                    <li class="list-group-item">
+                        <i class="bi bi-house-door" style="color:black"></i>  @(std.Name + " " + std.SurName+" "+std.Number) (<i>@(std.Classes.Name+" "+cls.Students.SurName)</i>)
+                    </li>
+                }
+                
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div>
+                @Html.ActionLink("Add Class", "NewClasses", "Classes", null, new { @class = "btn btn-primary" })
+            </div>
+            <br />
+            <br />
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    <i class="bi bi-house-door" style="color:yellow"></i>  Classes
+                </li>
+                @foreach (var std in Model.Classes)
+                {
+                    <li class="list-group-item">
+                        <i class="bi bi-people" style="color:black"></i>  @(std.Name)
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
